@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "set NODE_OPTIONS=--max_old_space_size=2560 && ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod --output-path docs --base-href ./",
     "lint": "ng lint",
     "hmr": "ng serve --configuration hmr",
     "clean": "rimraf node_modules"

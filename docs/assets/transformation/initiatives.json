@@ -1,0 +1,342 @@
+[
+  {
+    "initiativeId": "1",
+    "workstreamId": "1",
+    "status": "completed",
+    "stage": "Planning",
+    "ownerId": "101",
+    "previousApproverId": 100,
+    "description": "Initiative for John Doe1",
+    "intendedDate": "2025-06-01",
+    "aspiredDate": "2025-06-10",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-05-25T09:00:00Z",
+    "fields": [
+      {
+        "id": "f1",
+        "parentId": "1",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$200",
+        "createdAt": "2025-05-25T09:00:00Z"
+      },
+      {
+        "id": "f2",
+        "parentId": "1",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "5%",
+        "createdAt": "2025-05-25T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "2",
+    "workstreamId": "2",
+    "status": "in progress",
+    "stage": "Execution",
+    "ownerId": "102",
+    "previousApproverId": 101,
+    "description": "Initiative for Jane Smith",
+    "intendedDate": "2025-06-05",
+    "aspiredDate": "2025-06-15",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-05-28T10:00:00Z",
+    "fields": [
+      {
+        "id": "f3",
+        "parentId": "2",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$300",
+        "createdAt": "2025-05-28T10:00:00Z"
+      },
+      {
+        "id": "f4",
+        "parentId": "2",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "10%",
+        "createdAt": "2025-05-28T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "3",
+    "workstreamId": "3",
+    "status": "pending",
+    "stage": "Review",
+    "ownerId": "103",
+    "previousApproverId": 102,
+    "description": "Initiative for Alice Johnson",
+    "intendedDate": "2025-06-08",
+    "aspiredDate": "2025-06-18",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-01T11:00:00Z",
+    "fields": [
+      {
+        "id": "f5",
+        "parentId": "3",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$250",
+        "createdAt": "2025-06-01T11:00:00Z"
+      },
+      {
+        "id": "f6",
+        "parentId": "3",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "8%",
+        "createdAt": "2025-06-01T11:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "4",
+    "workstreamId": "4",
+    "status": "delayed",
+    "stage": "Approval",
+    "ownerId": "104",
+    "previousApproverId": 103,
+    "description": "Initiative for Bob Brown",
+    "intendedDate": "2025-06-12",
+    "aspiredDate": "2025-06-22",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-05T12:00:00Z",
+    "fields": [
+      {
+        "id": "f7",
+        "parentId": "4",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$400",
+        "createdAt": "2025-06-05T12:00:00Z"
+      },
+      {
+        "id": "f8",
+        "parentId": "4",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "12%",
+        "createdAt": "2025-06-05T12:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "5",
+    "workstreamId": "5",
+    "status": "completed",
+    "stage": "Completed",
+    "ownerId": "105",
+    "previousApproverId": 104,
+    "description": "Initiative for Charlie Davis",
+    "intendedDate": "2025-06-15",
+    "aspiredDate": "2025-06-25",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-08T13:00:00Z",
+    "fields": [
+      {
+        "id": "f9",
+        "parentId": "5",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$500",
+        "createdAt": "2025-06-08T13:00:00Z"
+      },
+      {
+        "id": "f10",
+        "parentId": "5",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "15%",
+        "createdAt": "2025-06-08T13:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "6",
+    "workstreamId": "6",
+    "status": "in progress",
+    "stage": "Execution",
+    "ownerId": "106",
+    "previousApproverId": 105,
+    "description": "Initiative for Diana Prince",
+    "intendedDate": "2025-06-20",
+    "aspiredDate": "2025-06-30",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-13T14:00:00Z",
+    "fields": [
+      {
+        "id": "f11",
+        "parentId": "6",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$350",
+        "createdAt": "2025-06-13T14:00:00Z"
+      },
+      {
+        "id": "f12",
+        "parentId": "6",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "7%",
+        "createdAt": "2025-06-13T14:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "7",
+    "workstreamId": "7",
+    "status": "pending",
+    "stage": "Planning",
+    "ownerId": "107",
+    "previousApproverId": 106,
+    "description": "Initiative for Clark Kent",
+    "intendedDate": "2025-06-25",
+    "aspiredDate": "2025-07-05",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-18T15:00:00Z",
+    "fields": [
+      {
+        "id": "f13",
+        "parentId": "7",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$280",
+        "createdAt": "2025-06-18T15:00:00Z"
+      },
+      {
+        "id": "f14",
+        "parentId": "7",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "9%",
+        "createdAt": "2025-06-18T15:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "8",
+    "workstreamId": "8",
+    "status": "delayed",
+    "stage": "Review",
+    "ownerId": "108",
+    "previousApproverId": 107,
+    "description": "Initiative for Bruce Wayne",
+    "intendedDate": "2025-06-28",
+    "aspiredDate": "2025-07-08",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-21T16:00:00Z",
+    "fields": [
+      {
+        "id": "f15",
+        "parentId": "8",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$220",
+        "createdAt": "2025-06-21T16:00:00Z"
+      },
+      {
+        "id": "f16",
+        "parentId": "8",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "6%",
+        "createdAt": "2025-06-21T16:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "9",
+    "workstreamId": "9",
+    "status": "completed",
+    "stage": "Approval",
+    "ownerId": "109",
+    "previousApproverId": 108,
+    "description": "Initiative for Tony Stark",
+    "intendedDate": "2025-07-01",
+    "aspiredDate": "2025-07-11",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-24T17:00:00Z",
+    "fields": [
+      {
+        "id": "f17",
+        "parentId": "9",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$450",
+        "createdAt": "2025-06-24T17:00:00Z"
+      },
+      {
+        "id": "f18",
+        "parentId": "9",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "11%",
+        "createdAt": "2025-06-24T17:00:00Z"
+      }
+    ]
+  },
+  {
+    "initiativeId": "10",
+    "workstreamId": "10",
+    "status": "in progress",
+    "stage": "Execution",
+    "ownerId": "110",
+    "previousApproverId": 109,
+    "description": "Initiative for Steve Rogers",
+    "intendedDate": "2025-07-05",
+    "aspiredDate": "2025-07-15",
+    "actualDate": null,
+    "weeklyMeetingFlag": false,
+    "needAttention": false,
+    "priorityMarker": null,
+    "createdAt": "2025-06-27T18:00:00Z",
+    "fields": [
+      {
+        "id": "f19",
+        "parentId": "10",
+        "fieldId": "1",
+        "fieldName": "Avg Cost Per Vendor",
+        "fieldValue": "$600",
+        "createdAt": "2025-06-27T18:00:00Z"
+      },
+      {
+        "id": "f20",
+        "parentId": "10",
+        "fieldId": "2",
+        "fieldName": "YoY Impact",
+        "fieldValue": "13%",
+        "createdAt": "2025-06-27T18:00:00Z"
+      }
+    ]
+  }
+]

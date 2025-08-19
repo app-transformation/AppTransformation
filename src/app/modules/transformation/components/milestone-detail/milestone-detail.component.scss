@@ -1,40 +1,8 @@
-@import '../../containers/transformation-initiative-page/transformation-initiative-page.component.scss';
-
-.milestone-detail-container {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
-  padding: 32px 24px;
-  margin: 24px 0;
-}
-
-.back-btn {
-  margin-bottom: 16px;
-}
-
-h2, .milestone-detail-heading {
-  font-size: 1.35rem !important;
-  font-weight: 600;
-  margin-bottom: 18px !important;
-}
-
-.milestone-detail-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px 32px;
-}
-
-.detail-item.description {
-  grid-column: 1 / span 3;
-}
-
-.detail-item {
-  background: #f5f7fa;
-  border-radius: 8px;
-  padding: 16px;
-  font-size: 1.15rem !important;
-  color: #263238;
-  box-shadow: 0 1px 4px rgba(25, 118, 210, 0.04);
+.milestone-back-btn-wrapper {
+  margin-top: 24px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .milestone-back-btn {
@@ -52,165 +20,10 @@ h2, .milestone-detail-heading {
   align-items: center;
   gap: 8px;
 }
-
 .milestone-back-btn:hover {
   background: #1976d2;
   color: #fff;
   border-color: #1976d2;
-}
-
-.milestone-glass-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 18px 0 rgba(31, 38, 135, 0.10);
-  border-radius: 16px;
-  border: 1.5px solid rgba(30, 136, 229, 0.13);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  padding: 18px 28px 18px 18px;
-  margin-bottom: 32px;
-  transition: box-shadow 0.2s, border 0.2s;
-}
-
-.milestone-glass-accent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 52px;
-  min-height: 52px;
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, #1976d2 60%, #d81b60 100%);
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.7rem;
-  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
-}
-
-.milestone-glass-accent mat-icon {
-  font-size: 1.7rem;
-  width: 1em;
-  height: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.milestone-glass-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.milestone-glass-title-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 2px;
-}
-
-.milestone-glass-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #1a237e;
-  letter-spacing: 0.5px;
-}
-
-.status-chip {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 16px;
-  padding: 4px 16px 4px 10px;
-  box-shadow: 0 1px 4px rgba(25, 118, 210, 0.08);
-  color: #fff;
-  background: #607d8b;
-  letter-spacing: 0.5px;
-}
-
-.status-chip .status-chip-icon {
-  font-size: 1.2rem;
-}
-
-.status-chip.status-on-track,
-.status-chip.status-completed {
-  background: #43a047;
-  color: #fff;
-}
-
-.status-chip.status-delayed {
-  background: #e53935;
-  color: #fff;
-}
-
-.status-chip.status-pending {
-  background: #fbc02d;
-  color: #263238;
-}
-
-.milestone-glass-summary-row {
-  display: flex;
-  flex-direction: row;
-  gap: 28px;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.milestone-glass-description {
-  margin-bottom: 10px;
-  margin-top: 2px;
-}
-
-.milestone-glass-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px 24px;
-  margin-top: 8px;
-}
-
-.glass-summary-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 90px;
-  gap: 2px;
-}
-
-.glass-label {
-  color: #1976d2;
-  font-weight: 700;
-  font-size: 0.98rem;
-  margin-bottom: 1px;
-}
-
-.glass-value {
-  font-size: 1.08rem;
-  font-weight: 600;
-  color: #212121;
-}
-
-.status-badge {
-  padding: 4px 14px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 15px;
-  background: #e3f2fd;
-  color: #1976d2;
-  margin-left: 4px;
-}
-
-.milestone-back-btn-wrapper {
-  margin-top: 24px;
-  margin-bottom: 18px;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .milestone-child-card {
@@ -241,7 +54,6 @@ h2, .milestone-detail-heading {
   box-shadow: 0 1px 4px rgba(25, 118, 210, 0.10);
   margin-right: 16px;
 }
-
 .milestone-child-accent mat-icon {
   font-size: 1.1rem;
   width: 1em;
@@ -280,4 +92,79 @@ h2, .milestone-detail-heading {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 2px;
+}
+
+.status-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 16px;
+  padding: 4px 16px 4px 10px;
+  box-shadow: 0 1px 4px rgba(25, 118, 210, 0.08);
+  color: #fff;
+  background: #607d8b;
+  letter-spacing: 0.5px;
+}
+.status-chip .status-chip-icon {
+  font-size: 1.2rem;
+}
+.status-chip.status-on-track,
+.status-chip.status-completed {
+  background: #43a047;
+  color: #fff;
+}
+.status-chip.status-delayed {
+  background: #e53935;
+  color: #fff;
+}
+.status-chip.status-pending {
+  background: #fbc02d;
+  color: #263238;
+}
+
+.glass-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 90px;
+  gap: 2px;
+}
+.glass-label {
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin-bottom: 1px;
+}
+.glass-value {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #212121;
+}
+
+.status-badge {
+  padding: 4px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  background: #e3f2fd;
+  color: #1976d2;
+  margin-left: 4px;
+}
+
+/* Form layout helpers */
+.initiative-container {
+  margin-top: 24px;
+}
+.form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+.three-cols > * {
+  flex: 1 1 0;
+}
+.description-field {
+  width: 100%;
 }
