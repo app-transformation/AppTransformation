@@ -1,0 +1,10 @@
+<div class="dashboard-chart">
+  <h3 style="margin: 20px;">Initiative Forecast</h3>
+  <apx-chart *ngIf="chartVisible"
+    [series]="forecastSeries"
+    [chart]="{ type: 'bar', height: 400, stacked: true }"
+    [xaxis]="{ categories: forecastCategories }"
+    [legend]="{ position: 'top' }"
+    [plotOptions]="{ bar: { columnWidth: '40%' } }"
+  ></apx-chart>
+</div>

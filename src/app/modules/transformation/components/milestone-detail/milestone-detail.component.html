@@ -1,0 +1,103 @@
+<div class="milestone-back-btn-wrapper">
+  <button mat-stroked-button color="primary" (click)="back.emit()" class="milestone-back-btn">
+    <mat-icon>arrow_back</mat-icon>
+    Back to Milestones
+  </button>
+</div>
+<div class="milestone-child-card">
+  <div class="milestone-child-accent">
+    <mat-icon>flag</mat-icon>
+  </div>
+  <div class="milestone-child-content">
+    <div class="milestone-child-title-row">
+      <div class="milestone-child-title">Milestone</div>
+      <span class="status-chip" [ngClass]="getStatusClass(milestone.status)">
+        <mat-icon class="status-chip-icon" *ngIf="milestone.status === 'Completed' || milestone.status === 'On Track'">check_circle</mat-icon>
+        <mat-icon class="status-chip-icon" *ngIf="milestone.status === 'Delayed'">error</mat-icon>
+        <mat-icon class="status-chip-icon" *ngIf="milestone.status === 'Pending'">schedule</mat-icon>
+        {{milestone.status}}
+      </span>
+    </div>
+    <div class="milestone-child-summary-row">
+      <div class="glass-summary-item">
+        <span class="glass-label">Owner</span>
+        <span class="glass-value">{{milestone.milestoneOwner}}</span>
+      </div>
+      <div class="glass-summary-item">
+        <span class="glass-label">Status</span>
+        <span class="glass-value"><span class="status-badge" [ngClass]="getStatusClass(milestone.status)">{{milestone.status}}</span></span>
+      </div>
+      <div class="glass-summary-item">
+        <span class="glass-label">Stage</span>
+        <span class="glass-value">{{milestone.initiativeStage}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="initiative-container">
+  <div class="form-row three-cols">
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.status">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Initiative Stage</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.initiativeStage">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Milestone Owner</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.milestoneOwner">
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="description-field">
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="milestoneForm.description"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="form-row three-cols">
+    <mat-form-field appearance="fill">
+      <mat-label>Avg Spend/FTE</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.avgSpendFte" name="avgSpendFte">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Avg Cost Per Vendor</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.avgCostPerVendor" name="avgCostPerVendor">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Avg Time for Milestone Completion</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.avgTimeForMilestoneCompletion" name="avgTimeForMilestoneCompletion">
+    </mat-form-field>
+  </div>
+  <div class="form-row three-cols">
+    <mat-form-field appearance="fill">
+      <mat-label>Intended Date</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.intendedDate" name="intendedDate">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Aspired Date</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.aspiredDate" name="aspiredDate">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Actual Date</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.actualDate" name="actualDate">
+    </mat-form-field>
+  </div>
+  <div class="form-row three-cols">
+    <mat-form-field appearance="fill">
+      <mat-label>Weekly Meeting Flag</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.weeklyMeetingFlag" name="weeklyMeetingFlag">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Need X Attention</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.needXAttention" name="needXAttention">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Priority Marker</mat-label>
+      <input matInput [(ngModel)]="milestoneForm.priorityMarker" name="priorityMarker">
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+  </div>
+</div>

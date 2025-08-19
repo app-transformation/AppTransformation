@@ -1,0 +1,80 @@
+@import '../../search/components/initiative-data/initiative-data.component.scss';
+
+.milestone-table-wrapper {
+  padding: 32px 24px 24px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
+  margin: 32px 0;
+}
+
+.milestone-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.milestone-table-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1976d2;
+}
+
+.milestone-table-content {
+  padding: 0;
+}
+
+.table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-header {
+  background: #f5f7fa;
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.table-header-text {
+  margin: 0;
+}
+
+.milestone-table-row {
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.milestone-table-row:hover {
+  background: #e3f2fd;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: capitalize;
+  &.completed { background: #c8e6c9; color: #256029; }
+  &.pending { background: #fff9c4; color: #b59f00; }
+  &.delayed { background: #ffcdd2; color: #b71c1c; }
+  &.in-progress { background: #bbdefb; color: #0d47a1; }
+}
+
+.filter-input {
+  min-width: 220px;
+  margin-left: 24px;
+}
+
+.table-header[mat-header-cell][mat-column-status],
+.table-body[mat-cell][mat-column-status] {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+::ng-deep .status-column .mat-sort-header-container{
+  width: 100px;
+}

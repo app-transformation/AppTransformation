@@ -1,0 +1,12 @@
+<div class="dashboard-chart">
+  <h3 style="margin: 20px;">Initiative Bar Chart</h3>
+  <apx-chart *ngIf="chartVisible"
+    [series]="initiativeSeries"
+    [chart]="{ type: 'bar', height: 400 }"
+    [plotOptions]="{ bar: { horizontal: false, columnWidth: '40%' } }"
+    [dataLabels]="{ enabled: false }"
+    [xaxis]="{ categories: ['L1', 'L2', 'L3', 'L4'] }"
+    [colors]="['#4caf50', '#ff9800']"
+    [legend]="{ show: true, showForSingleSeries: true, showForNullSeries: true, showForZeroSeries: true }"
+  ></apx-chart>
+</div>

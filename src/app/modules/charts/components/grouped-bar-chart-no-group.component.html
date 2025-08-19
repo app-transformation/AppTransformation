@@ -1,0 +1,12 @@
+<div class="dashboard-chart">
+  <h3 style="margin: 20px;">Value Leakage / Gain</h3>
+  <apx-chart *ngIf="chartVisible"
+    [series]="valueLeakageSeries"
+    [chart]="{ type: 'bar', height: 400 }"
+    [xaxis]="{ categories: ['L1 - L2', 'L2 - L3', 'L3 - L4'] }"
+    [plotOptions]="{ bar: { horizontal: false, columnWidth: '40%' } }"
+    [colors]="['#4caf50', '#e53935']"
+    [dataLabels]="{ enabled: false }"
+    [legend]="{ show: true, showForSingleSeries: true, showForNullSeries: true, showForZeroSeries: true }"
+  ></apx-chart>
+</div>

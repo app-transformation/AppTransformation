@@ -1,0 +1,12 @@
+<div class="dashboard-chart">
+  <h3 style="margin: 20px;">Impact Value Pipeline</h3>
+  <apx-chart *ngIf="chartVisible"
+    [series]="impactSeries"
+    [chart]="{ type: 'bar', height: 400, stacked: true }"
+    [plotOptions]="{ bar: { horizontal: false, columnWidth: '40%' } }"
+    [xaxis]="{ categories: ['L1', 'L2', 'L3', 'L4'] }"
+    [colors]="['#4caf50', '#81c784', '#e53935', '#ffb74d']"
+    [dataLabels]="{ enabled: false }"
+    [yaxis]="{ min: -50, max: 100 }"
+  ></apx-chart>
+</div>

@@ -1,0 +1,61 @@
+<mat-card class="activity-history-timeline">
+  <mat-card-title class="heading-info">Activity History</mat-card-title>
+  <mat-card-content>
+    <div class="timeline-block-wrapper">
+      <div
+        class="timeline-block"
+        *ngFor="let item of activityHistory; let i = index"
+        [ngClass]="{ 'timeline-block--reverse': i % 2 !== 0 }"
+      >
+        <!-- Left block: card for even, placeholder for odd -->
+        <div class="timeline-left-block">
+          <ng-container *ngIf="i % 2 === 0">
+            <mat-card class="activity-history-card">
+              <div class="activity-header">
+                <span class="username">{{ item.username }}</span>
+                <span class="datetime">{{ item.dateTime | date:'medium' }}</span>
+              </div>
+              <div class="activity-type" [ngClass]="item.type.toLowerCase()">{{ item.type }}</div>
+              <div class="activity-values">
+                <div *ngIf="item.previousValue"><b>Previous:</b> {{ item.previousValue }}</div>
+                <div *ngIf="item.newValue"><b>New:</b> {{ item.newValue }}</div>
+              </div>
+            </mat-card>
+          </ng-container>
+          <ng-container *ngIf="i % 2 !== 0">
+            <div style="height: 120px;"></div>
+          </ng-container>
+        </div>
+        <!-- Timeline line and circle -->
+        <div class="timeline-line-wrapper">
+          <div class="timeline-circle" [ngClass]="item.type.toLowerCase()">
+            <mat-icon *ngIf="item.type === 'Create'">add_circle</mat-icon>
+            <mat-icon *ngIf="item.type === 'Edit'">edit</mat-icon>
+            <mat-icon *ngIf="item.type === 'Delete'">delete</mat-icon>
+          </div>
+          <div class="timeline-line"></div>
+        </div>
+        <!-- Right block: card for odd, placeholder for even -->
+        <div class="timeline-right-block">
+          <ng-container *ngIf="i % 2 !== 0">
+            <mat-card class="activity-history-card">
+              <div class="activity-header">
+                <span class="username">{{ item.username }}</span>
+                <span class="datetime">{{ item.dateTime | date:'medium' }}</span>
+              </div>
+              <div class="activity-type" [ngClass]="item.type.toLowerCase()">{{ item.type }}</div>
+              <div class="activity-values">
+                <div *ngIf="item.previousValue"><b>Previous:</b> {{ item.previousValue }}</div>
+                <div *ngIf="item.newValue"><b>New:</b> {{ item.newValue }}</div>
+              </div>
+            </mat-card>
+          </ng-container>
+          <ng-container *ngIf="i % 2 === 0">
+            <div style="height: 120px;"></div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<!-- Charts moved to Charts page -->

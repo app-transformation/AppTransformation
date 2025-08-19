@@ -1,0 +1,30 @@
+<mat-card class="key-performance-indicators">
+  <mat-card-title class="key-performance-indicators__header">
+    <p class="key-performance-indicators__header-title">KPIs</p>
+
+    <app-settings-menu></app-settings-menu>
+  </mat-card-title>
+  
+
+
+  <mat-card-content class="key-performance-indicators__content key-performance-indicators__content-scrollable">
+  <div class="key-performance-indicators__content-item" *ngFor="let kpi of topKPIs">
+    <div class="key-performance-indicators__content-item-text-wrapper">
+      <p class="key-performance-indicators__content-item-text">{{kpi.key}}</p>
+    </div>
+    <div class="key-performance-indicators__content-item-text-wrapper">
+      <p class="key-performance-indicators__content-item-text">{{kpi.value}}</p>
+    </div>
+  </div>
+  <!-- <div class="key-performance-indicators__content-scrollable"> -->
+    <div class="key-performance-indicators__content-item" *ngFor="let kpi of restKPIs">
+      <div class="key-performance-indicators__content-item-text-wrapper">
+        <p class="key-performance-indicators__content-item-text">{{kpi.key}}</p>
+      </div>
+      <div class="key-performance-indicators__content-item-text-wrapper">
+        <p class="key-performance-indicators__content-item-text">{{kpi.value}}</p>
+      </div>
+    </div>
+  <!-- </div> -->
+</mat-card-content>
+</mat-card>

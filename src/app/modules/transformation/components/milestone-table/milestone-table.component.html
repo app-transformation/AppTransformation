@@ -1,0 +1,131 @@
+<mat-card class="milestone-table-wrapper">
+  
+  <mat-card-title class="milestone-table-header" style="display: flex; align-items: center;">
+  <div>
+    <p class="milestone-table-title">Milestones</p>
+  </div>
+  <span style="margin-left: auto; display: flex; align-items: center;">
+    <button mat-raised-button color="primary" (click)="showAddMilestoneForm = true" style="margin-right: 8px; display: flex; align-items: center; padding-top: 2px; margin-bottom: 20px; height: 50px; margin-right: 20px">
+      <mat-icon style="vertical-align: middle; margin-right: 4px;">add</mat-icon>
+      <span style="vertical-align: middle; font-weight: 500;">Add Milestone</span>
+    </button>
+    <mat-form-field appearance="outline" class="filter-input right-align" style="margin-bottom: 0;">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter results" />
+    </mat-form-field>
+  </span>
+</mat-card-title>
+  <mat-card-content class="milestone-table-content">
+    <div class="milestone-table-actions" style="margin-bottom: 16px;">
+    </div>
+    <app-milestone-detail *ngIf="showAddMilestoneForm" [milestone]="newMilestone" (back)="showAddMilestoneForm = false" (saveMilestone)="addMilestone($event)"></app-milestone-detail>
+    <table mat-table [dataSource]="dataSource" matSort class="table">
+      <ng-container matColumnDef="status">
+        <th class="table-header status-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Status</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <span class="status-badge" [ngClass]="element.status.replace(' ', '-')">{{element.status}}</span>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="initiativeStage">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Initiative Stage</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.initiativeStage}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="milestoneOwner">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Milestone Owner</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.milestoneOwner}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Description</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.description}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="avgSpendFte">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Avg Spend/FTE</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.avgSpendFte}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="avgCostPerVendor">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Avg Cost Per Vendor</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.avgCostPerVendor}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="avgTimeForMilestoneCompletion">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Avg Time for Milestone Completion</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.avgTimeForMilestoneCompletion}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="intendedDate">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Intended Date</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.intendedDate}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="aspiredDate">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Aspired Date</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.aspiredDate}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actualDate">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Actual Date</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.actualDate}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="weeklyMeetingFlag">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Weekly Meeting Flag</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.weeklyMeetingFlag}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="needXAttention">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Need X Attention</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.needXAttention}}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="priorityMarker">
+        <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>
+          <p class="table-header-text">Priority Marker</p>
+        </th>
+        <td class="table-body" mat-cell *matCellDef="let element">
+          <p class="table-body-text">{{element.priorityMarker}}</p>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)" class="milestone-table-row"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,61 @@
+<div class="impact-table-header">
+  <button mat-icon-button color="primary" (click)="addExtraRows()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<table mat-table [dataSource]="displayRows" class="impact-table">
+  <ng-container matColumnDef="sno">
+    <th mat-header-cell *matHeaderCellDef class="impact-header-cell">S.No.</th>
+    <td mat-cell *matCellDef="let row; let i = index" class="impact-header-cell">{{i + 1}}</td>
+  </ng-container>
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef class="impact-header-cell">Type of Impact</th>
+    <td mat-cell *matCellDef="let row; let i = index" class="impact-header-cell">
+      <mat-form-field appearance="fill" class="impact-field">
+        <mat-select [(ngModel)]="row.type" (selectionChange)="onTypeChange(row)" placeholder="Type of Impact" [disabled]="i < 2 && row.disabled">
+          <mat-option value="" disabled selected>Type of Impact</mat-option>
+          <mat-option value="Earning">Earning</mat-option>
+          <mat-option value="Expenditure">Expenditure</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef class="impact-header-cell">Category of Impact</th>
+    <td mat-cell *matCellDef="let row; let i = index" class="impact-header-cell">
+      <mat-form-field appearance="fill" class="impact-field">
+        <mat-select [(ngModel)]="row.category" [disabled]="i < 2 && row.disabled">
+          <mat-option *ngFor="let cat of getCategories(row)" [value]="cat">{{cat}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef class="impact-header-cell">Description</th>
+    <td mat-cell *matCellDef="let row; let i = index" class="impact-header-cell">
+      <mat-form-field appearance="fill" class="impact-field">
+        <input matInput [(ngModel)]="row.description" placeholder="Description" [disabled]="i < 2 && row.disabled">
+      </mat-form-field>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="attachment">
+    <th mat-header-cell *matHeaderCellDef class="impact-header-cell">Attachment</th>
+    <td mat-cell *matCellDef="let row; let i = index" class="impact-header-cell attachment-cell">
+      <button mat-icon-button (click)="fileInput.click()" [disabled]="i < 2 && row.disabled">
+        <mat-icon>attach_file</mat-icon>
+      </button>
+      <input #fileInput type="file" style="display:none" (change)="onFileSelected($event, row)" accept="application/pdf" [disabled]="i < 2 && row.disabled">
+      <span *ngIf="row.attachment">{{row.attachment.name}}</span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef class="impact-header-cell">Value</th>
+    <td mat-cell *matCellDef="let row; let i = index" class="impact-header-cell">
+      <mat-form-field appearance="fill" class="impact-field">
+        <input matInput [(ngModel)]="row.value" placeholder="Value" (ngModelChange)="onValueChange()" [disabled]="i < 2 && row.disabled">
+      </mat-form-field>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['sno', 'type', 'category', 'description', 'attachment', 'value']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['sno', 'type', 'category', 'description', 'attachment', 'value']"></tr>
+</table>

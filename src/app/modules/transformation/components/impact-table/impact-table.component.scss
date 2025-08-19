@@ -1,0 +1,188 @@
+.impact-table-wrapper {
+  padding: 32px 0 0 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
+  margin: 32px 0 0 0;
+}
+
+.impact-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
+  margin: 0;
+}
+
+.impact-table-header {
+  background: #f5f7fa;
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 0 8px;
+}
+
+.impact-header-cell {
+  padding: 8px 16px !important;
+  text-align: left;
+}
+
+.impact-table-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+
+.impact-table-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.add-row-btn {
+  margin-left: 16px;
+}
+
+.impact-table-row {
+  transition: background 0.2s;
+}
+
+th.mat-header-cell, td.mat-cell {
+  text-align: left;
+  padding: 0;
+  background: #fff;
+}
+
+th.mat-header-cell {
+  background: #fff;
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 1px solid #e3e8f0;
+}
+
+tr.mat-row:last-child td.mat-cell {
+  border-bottom: none;
+}
+
+.impact-field, .mat-form-field {
+  width: 90%;
+  margin: 0;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background: white !important;
+  border-radius: 0;
+  min-height: 40px;
+  box-shadow: none;
+  border: none;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-outline {
+  display: none;
+}
+
+.mat-select, .mat-input-element {
+  font-size: 15px;
+  padding: 0 8px;
+  background: #fff;
+}
+
+.mat-select-trigger {
+  padding-right: 32px !important; /* Extra space for arrow */
+  box-sizing: border-box;
+}
+
+.mat-select-arrow {
+  color: #1976d2;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  right: 16px; /* Move arrow closer to edge */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button[mat-icon-button] {
+  vertical-align: middle;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+:host ::ng-deep .impact-table .mat-form-field-appearance-fill .mat-form-field-flex {
+  background: #fff !important;
+}
+
+.impact-table .mat-cell .mat-form-field {
+  margin-right: 8px;
+}
+.impact-table .mat-cell:last-child .mat-form-field {
+  margin-right: 0;
+}
+
+.impact-table .mat-form-field {
+  width: 90%;
+}
+
+.impact-table .mat-select-arrow {
+  position: absolute;
+  right: 12px;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.impact-table tr.mat-row, .impact-table tr.mat-header-row {
+  height: 48px;
+}
+
+.impact-table td.mat-cell, .impact-table th.mat-header-cell {
+  height: 72px;
+  vertical-align: middle;
+}
+
+.impact-table .attachment-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+}
+
+.impact-table .attachment-cell button[mat-icon-button] {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  margin: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.impact-table .attachment-cell button[mat-icon-button]:hover,
+.impact-table .attachment-cell button[mat-icon-button]:focus,
+.impact-table .attachment-cell button[mat-icon-button]:active {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.impact-table .attachment-cell button[mat-icon-button] .mat-ripple-element {
+  display: none !important;
+}
+
+:ng-deep .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+    position: absolute;
+    right: 0;
+}
+
+:ng-deep .impact-table .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+  position: absolute !important;
+  right: 12px !important;
+  left: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  min-width: unset !important;
+  width: auto !important;
+}

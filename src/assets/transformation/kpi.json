@@ -1,0 +1,32 @@
+[
+      {
+        "id": "1",
+        "key": "Total Cost",
+        "value": "$1,200,000"
+      },
+      {
+        "id": "2",
+        "key": "Avg Cost per FTE",
+        "value": "$80,000"
+      },
+      {
+        "id": "3",
+        "key": "Cost per Initiative",
+        "value": "$150,000"
+      },
+      {
+        "id": "4",
+        "key": "Total Revenue",
+        "value": "$2,500,000"
+      },
+      {
+        "id": "5",
+        "key": "Avg Revenue per FTE",
+        "value": "$200,000"
+      },
+      {
+        "id": "6",
+        "key": "Revenue per Initiative",
+        "value": "$300,000"
+      }
+]

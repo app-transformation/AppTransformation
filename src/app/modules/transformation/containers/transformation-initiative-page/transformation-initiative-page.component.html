@@ -1,0 +1,142 @@
+<div class="initiative-glass-card">
+  <div class="initiative-glass-accent">
+    <mat-icon>flag</mat-icon>
+  </div>
+  <div class="initiative-glass-content">
+    <div class="initiative-glass-title-row">
+      <div class="initiative-glass-title">Transformation Initiative</div>
+      <span class="status-chip" [ngClass]="getStatusClass(selectedInitiative?.status)">
+        <mat-icon class="status-chip-icon" *ngIf="selectedInitiative?.status === 'Completed' || selectedInitiative?.status === 'On Track'">check_circle</mat-icon>
+        <mat-icon class="status-chip-icon" *ngIf="selectedInitiative?.status === 'Delayed'">error</mat-icon>
+        <mat-icon class="status-chip-icon" *ngIf="selectedInitiative?.status === 'Pending'">schedule</mat-icon>
+        {{selectedInitiative?.status}}
+      </span>
+    </div>
+    <div class="initiative-glass-summary-row">
+      <div class="glass-summary-item">
+        <span class="glass-label">ID</span>
+        <span class="glass-value">#{{selectedInitiative?.initiativeId}}</span>
+      </div>
+      <div class="glass-summary-item">
+        <span class="glass-label">Owner</span>
+        <span class="glass-value">{{selectedInitiative?.ownerId}}</span>
+      </div>
+      <div class="glass-summary-item">
+        <span class="glass-label">Status</span>
+        <span class="glass-value"><span class="status-badge" [ngClass]="getStatusClass(selectedInitiative?.status)">{{selectedInitiative?.status}}</span></span>
+      </div>
+      <div class="glass-summary-item">
+        <span class="glass-label">Stage</span>
+        <span class="glass-value">{{selectedInitiative?.stage}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-tab-group class="m3-tabs margin-bottom-24">
+  <mat-tab label="Initiative">
+    <div class="initiative-container">
+      <div class="section-header">Initiative Details</div>
+      <div class="form-row four-cols">
+        <mat-form-field appearance="fill">
+          <mat-label>Status</mat-label>
+          <input matInput placeholder="Status" [(ngModel)]="selectedInitiative.status" name="status">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Stage</mat-label>
+          <input matInput placeholder="Stage" [(ngModel)]="selectedInitiative.stage" name="stage">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Initiative owner</mat-label>
+          <input matInput placeholder="Initiative owner" [(ngModel)]="selectedInitiative.ownerId" name="ownerId">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Previous approver</mat-label>
+          <input matInput placeholder="Previous approver" [(ngModel)]="selectedInitiative.previousApproverId" name="previousApproverId">
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="description-field">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Description" [(ngModel)]="selectedInitiative.description" name="description"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="section-header">Dates & Flags</div>
+      <div class="form-row three-cols">
+        <mat-form-field appearance="fill">
+          <mat-label>Intended date</mat-label>
+          <input matInput type="date" [(ngModel)]="selectedInitiative.intendedDate" name="intendedDate">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Aspired date</mat-label>
+          <input matInput type="date" [(ngModel)]="selectedInitiative.aspiredDate" name="aspiredDate">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Actual date</mat-label>
+          <input matInput type="date" [(ngModel)]="selectedInitiative.actualDate" name="actualDate">
+        </mat-form-field>
+      </div>
+      <div class="form-row three-cols">
+        <mat-form-field appearance="fill">
+          <mat-label>Weekly meeting flag</mat-label>
+          <input matInput [(ngModel)]="selectedInitiative.weeklyMeetingFlag" name="weeklyMeetingFlag">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Need Attention</mat-label>
+          <input matInput [(ngModel)]="selectedInitiative.needAttention" name="needAttention">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Priority marker</mat-label>
+          <input matInput [(ngModel)]="selectedInitiative.priorityMarker" name="priorityMarker">
+        </mat-form-field>
+      </div>
+      <div class="section-header">Financials</div>
+      <div class="form-row three-cols">
+        <mat-form-field appearance="fill">
+          <mat-label>Total Expenditure</mat-label>
+          <input matInput type="number" [(ngModel)]="totalExpenditure" [value]="totalExpenditure" name="totalExpenditure" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Total Earning</mat-label>
+          <input matInput type="number" [(ngModel)]="totalEarning" [value]="totalEarning" name="totalEarning" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Net Impact</mat-label>
+          <input matInput type="number" [value]="netImpact" name="netImpact" readonly>
+        </mat-form-field>
+      </div>
+      <div class="section-header">Additional Fields</div>
+      <div class="form-row three-cols" *ngIf="dynamicFields.length > 0">
+        <ng-container *ngFor="let field of dynamicFields">
+          <mat-form-field appearance="fill">
+            <mat-label>{{field.fieldName}}</mat-label>
+            <input matInput [(ngModel)]="field.fieldValue" name="{{field.fieldName}}">
+          </mat-form-field>
+        </ng-container>
+      </div>
+      <div *ngIf="isAddMode" style="margin-top: 24px;">
+        <button mat-raised-button color="primary" (click)="saveNewInitiative()">Save</button>
+        <button mat-button (click)="back.emit()" style="margin-left: 8px;">Cancel</button>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Milestones">
+    <ng-container *ngIf="selectedMilestone; else milestoneTable">
+      <app-milestone-detail 
+        [milestone]="selectedMilestone" 
+        [initiativeStatus]="selectedInitiative?.status" 
+        [initiativeTitle]="'#' + selectedInitiative?.initiativeId + ': ' + selectedInitiative?.ownerId"
+        (back)="selectedMilestone = null">
+      </app-milestone-detail>
+    </ng-container>
+    <ng-template #milestoneTable>
+      <app-milestone-table (milestoneSelected)="selectedMilestone = $event"></app-milestone-table>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Impact">
+    <app-impact-table (totalsChanged)="updateTotals($event)"></app-impact-table>
+  </mat-tab>
+  <mat-tab label="Activity History">
+    <app-activity-history></app-activity-history>
+  </mat-tab>
+</mat-tab-group>

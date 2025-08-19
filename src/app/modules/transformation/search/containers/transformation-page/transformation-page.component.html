@@ -1,0 +1,26 @@
+<mat-card class="card">
+  <mat-toolbar class="page-header" role="heading">
+    <div class="title-inner-wrapper">
+      <p class="title-text">Transformation</p>
+    </div>
+  </mat-toolbar>
+</mat-card>
+
+<div class="charts-wrapper">
+
+  <app-request-status class="chart" [requestStatusData]="requestStatus$ | async" [currentTheme]="currentTheme"></app-request-status>
+  
+  <app-request-tracker class="chart" [requestTrackerData]="requestTracker$ | async" [currentTheme]="currentTheme"></app-request-tracker>
+
+  <app-key-performance-indicators class="chart" [kpiData]="kpiData$ | async"></app-key-performance-indicators>
+
+  <app-revenue-chart class="chart" [revenueCharData]="revenueChartData$ | async"></app-revenue-chart>
+</div>
+
+<ng-container *ngIf="selectedInitiative; else initiativeTable">
+  <app-transformation-initiative-page [initiative]="selectedInitiative" (back)="selectedInitiative = null"></app-transformation-initiative-page>
+</ng-container>
+<ng-template #initiativeTable>
+  <app-initiative-data [initiativeData]="(initiativeData$ | async) || []" (initiativeSelected)="selectedInitiative = $event"></app-initiative-data>
+</ng-template>
+

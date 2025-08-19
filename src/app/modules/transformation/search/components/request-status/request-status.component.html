@@ -1,0 +1,47 @@
+<mat-card class="request-status">
+  <mat-card-title class="request-status__header">
+    <p class="request-status__title">Initiatives</p>
+
+    <app-settings-menu></app-settings-menu>
+  </mat-card-title>
+
+  <mat-card-content class="request-status__content">
+    <div class="request-status__content-info">
+      <div>
+        <h6 class="request-status__content-info-title">{{requestStatusData.initiative}}</h6>
+        <p>Initiatives</p>
+      </div>
+
+      <div>
+        <h6 class="request-status__content-info-title">{{requestStatusData.milestone}}</h6>
+        <p>Milestones</p>
+      </div>
+    </div>
+
+    <div class="request-status__content-stats">
+      <div>
+        <p class="request-status__content-stats-title">New</p>
+        <div class="request-status__content-stats-wrapper">
+          <p class="request-status__content-stats-data">{{requestStatusData.new}}</p>
+          <div class="request-status__content-stats-icon green"></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="request-status__content-stats-title">Open</p>
+        <div class="request-status__content-stats-wrapper">
+          <p class="request-status__content-stats-data">{{requestStatusData.inprocess}}</p>
+          <div class="request-status__content-stats-icon yellow"></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="request-status__content-stats-title">Completed</p>
+        <div class="request-status__content-stats-wrapper">
+          <p class="request-status__content-stats-data">{{requestStatusData.completed}}</p>
+          <div class="request-status__content-stats-icon blue"></div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

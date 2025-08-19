@@ -1,0 +1,50 @@
+<mat-card class="request-tracker">
+  <mat-card-title class="request-tracker__header">
+    <p class="request-tracker__header-title">Status</p>
+    <app-settings-menu></app-settings-menu>
+  </mat-card-title>
+
+  <mat-card-content class="request-tracker__content">
+    <div class="request-tracker__content-header">
+      <div class="request-tracker__content-header-item">
+        <div
+          class="request-tracker__content-header-item-icon"
+          [ngClass]="{
+            'blue' : currentTheme === 'blue',
+            'pink' : currentTheme === 'pink',
+            'green' : currentTheme === 'green'
+          }"
+        ></div>
+        <span class="request-tracker__content-header-item-text">
+          On-Track ({{ requestTrackerData?.onTrack || 0 }})
+        </span>
+      </div>
+      <div class="request-tracker__content-header-item">
+        <div class="request-tracker__content-header-item-icon yellow"></div>
+        <span class="request-tracker__content-header-item-text">
+          Delayed ({{ requestTrackerData?.delayed || 0 }})
+        </span>
+      </div>
+    </div>
+
+    <div class="request-tracker__progress-wrapper">
+      <h6 class="request-tracker__progress-title">
+        On-Track <span class="pull-right">({{ requestTrackerData?.onTrack || 0 }})</span>
+      </h6>
+      <mat-progress-bar
+        class="request-tracker__progress-bar"
+        mode="determinate"
+        [value]="getProgress(requestTrackerData?.onTrack, requestTrackerData?.delayed)"
+      ></mat-progress-bar>
+      <h6 class="request-tracker__progress-title">
+        Delayed <span class="pull-right">({{ requestTrackerData?.delayed || 0 }})</span>
+      </h6>
+      <mat-progress-bar
+        class="request-tracker__progress-bar"
+        mode="determinate"
+        color="accent"
+        [value]="getProgress(requestTrackerData?.delayed, requestTrackerData?.onTrack)"
+      ></mat-progress-bar>
+    </div>
+  </mat-card-content>
+</mat-card>

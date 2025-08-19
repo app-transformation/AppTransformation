@@ -1,0 +1,19 @@
+<mat-card class="charts-page-layout">
+  <mat-card-title>Charts</mat-card-title>
+  <div class="charts-content">
+    <nav class="charts-sidebar">
+      <ul>
+        <li [class.active]="selectedCharts.includes('initiative')" (click)="toggleChart('initiative')">Initiative Bar Chart</li>
+        <li [class.active]="selectedCharts.includes('impact')" (click)="toggleChart('impact')">Impact Stacked Bar Chart</li>
+        <li [class.active]="selectedCharts.includes('leakage')" (click)="toggleChart('leakage')">Value Leakage / Gain</li>
+        <li [class.active]="selectedCharts.includes('forecast')" (click)="toggleChart('forecast')">Forecast Stacked Bar Chart</li>
+      </ul>
+    </nav>
+    <div class="charts-main">
+      <app-grouped-bar-chart *ngIf="selectedCharts.includes('initiative')"></app-grouped-bar-chart>
+      <app-stacked-bar-chart *ngIf="selectedCharts.includes('impact')"></app-stacked-bar-chart>
+      <app-grouped-bar-chart-no-group *ngIf="selectedCharts.includes('leakage')"></app-grouped-bar-chart-no-group>
+      <app-grouped-bar-chart-mixed *ngIf="selectedCharts.includes('forecast')"></app-grouped-bar-chart-mixed>
+    </div>
+  </div>
+</mat-card>
