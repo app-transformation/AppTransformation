@@ -100,8 +100,8 @@ const route: Routes = [
         path: 'charts',
         // component: ActivityHistoryComponent,
         loadChildren: () => import('./modules/charts/charts.module').then(m => m.ChartsModule),
-        canActivate: [AuthGuard]
       },
+      
       {
         path: 'maps',
         canActivate: [AuthGuard],
